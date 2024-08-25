@@ -11,14 +11,16 @@ public class GameOver : MonoBehaviour
         score= GameObject.Find("score").GetComponent<Score>();
         panelcontlloler = GameObject.FindWithTag("Player").GetComponent<PanelContlloler>();
     }
-    //衝突した時専用の関数を作る
     private void OnCollisionEnter(Collision co)
     {
+ 
+        //触れたタグがゲームオーバーセンサーについている"fruits"なら最終スコアを表示する処理
         if (co.gameObject.tag == "fruits")
         {
             score.PlayScore();
             panelcontlloler.Result();
             Destroy(this.gameObject);
         }
+
     }
 }
