@@ -12,9 +12,9 @@ public class GameOver : MonoBehaviour
         panelcontlloler = GameObject.FindWithTag("Player").GetComponent<PanelContlloler>();
     }
     //Õ“Ë‚µ‚½ê—p‚ÌŠÖ”‚ğì‚é
-    private void OnTrigerEnter(Collider co)
+    private void OnCollisionEnter(Collision co)
     {
-        if (co.tag == "fruits")
+        if (co.gameObject.tag == "fruits")
         {
             score.PlayScore();
             panelcontlloler.Result();
